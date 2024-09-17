@@ -15,5 +15,8 @@
   "bugs": { 
     "url": "https://github.com/rstefani87info/ares-datasource-mysql.git/issues" 
   }, 
-  "homepage": "https://github.com/rstefani87info/ares-datasource-mysql.git#readme" 
+  "homepage": "https://github.com/rstefani87info/ares-datasource-mysql.git#readme",
+  "dependencies": {
+    "@ares/core": "github:rstefani87info/ares-core#master"
+  }
 } 

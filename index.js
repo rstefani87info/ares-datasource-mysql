@@ -1,6 +1,8 @@
 /** 
 * @author Roberto Stefani 
 **/ 
+const { SQLDBConnection } = require('@ares/core/datasources');
+
 let mysql;
 
 const isNode = typeof process !== 'undefined' && process.version;
