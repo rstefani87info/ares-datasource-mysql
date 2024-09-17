@@ -21,7 +21,7 @@ if (isNode) {
   console.log('Unknown platform: mysql connection not supported!');
 }
 
-export class MariaDB extends SQLDBConnection {
+class MariaDB extends SQLDBConnection {
     async nativeConnect(callback) {
       if (!MariaDB.pool) MariaDB.pool = mysql.createPool({...this, multipleStatements: true});
       const dbConn = this;
@@ -140,3 +140,5 @@ export class MariaDB extends SQLDBConnection {
     }
   }
   
+
+  module.exports = {MariaDB};
