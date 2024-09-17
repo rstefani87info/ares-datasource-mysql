@@ -1,0 +1,19 @@
+{  
+  "name": "@ares/datasource-mysql",  
+  "version": "1.0.0",  
+  "description": ,  
+  "main": "index.js",  
+  "scripts": {  
+    "test": "echo \"Error: no test specified\" && exit 1"  
+  },  
+  "author": "Roberto Stefani",  
+  "license": "MIT",  
+  "repository": { 
+      "type": "git", 
+      "url": "git+https://github.com/rstefani87info/datasource-mysql.git" 
+  }, 
+  "bugs": { 
+    "url": "https://github.com/rstefani87info/datasource-mysql.git/issues" 
+  }, 
+  "homepage": "https://github.com/rstefani87info/datasource-mysql.git#readme" 
+} 
