@@ -3,6 +3,7 @@
   "version": "1.0.0",  
   "description": "Mysql and MariaDB module of aReS framework.",  
   "main": "index.js",  
+  "type": "module",
   "scripts": {  
     "test": "echo \"Error: no test specified\" && exit 1"  
   },  
@@ -10,10 +11,10 @@
   "license": "MIT",  
   "repository": { 
       "type": "git", 
-      "url": "git+https://github.com/rstefani87info/datasource-mysql.git" 
+      "url": "git+https://github.com/rstefani87info/ares-datasource-mysql.git" 
   }, 
   "bugs": { 
-    "url": "https://github.com/rstefani87info/datasource-mysql.git/issues" 
+    "url": "https://github.com/rstefani87info/ares-datasource-mysql.git/issues" 
   }, 
-  "homepage": "https://github.com/rstefani87info/datasource-mysql.git#readme" 
+  "homepage": "https://github.com/rstefani87info/ares-datasource-mysql.git#readme" 
 } 
