@@ -6,7 +6,7 @@
 import mysql from 'mysql';
 import { SQLDBConnection } from '@ares/core/datasources.js';
 
-class MariaDB extends SQLDBConnection {
+export class MariaDB extends SQLDBConnection {
     async nativeConnect(callback) {
       if (!MariaDB.pool) MariaDB.pool = mysql.createPool({...this, multipleStatements: true});
       const dbConn = this;
@@ -125,5 +125,3 @@ class MariaDB extends SQLDBConnection {
     }
   }
   
-
-  module.exports = {MariaDB};
