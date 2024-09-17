@@ -4,7 +4,7 @@
 
 
 import mysql from 'mysql';
-import { SQLDBConnection } from '@ares/core/datasources';
+import { SQLDBConnection } from '@ares/core/datasources.js';
 
 class MariaDB extends SQLDBConnection {
     async nativeConnect(callback) {
