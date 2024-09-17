@@ -1,7 +1,8 @@
 /** 
 * @author Roberto Stefani 
 **/ 
-const { SQLDBConnection } = require('@ares/core/datasources');
+ const datasources = require('@ares/core/datasources');
+ const { SQLDBConnection } = datasources;
 
 let mysql;
 
