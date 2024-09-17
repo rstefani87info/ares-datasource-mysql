@@ -1,28 +1,10 @@
 /** 
 * @author Roberto Stefani 
 **/ 
- const datasources = await import('@ares/core/datasources.js');
- const { SQLDBConnection } = datasources;
 
-let mysql;
 
-const isNode = typeof process !== 'undefined' && process.version;
-const isReact = typeof window !== 'undefined' && typeof document !== 'undefined';
-const isReactNative = typeof navigator !== 'undefined' && navigator.product === 'ReactNative';
-const isAngular = typeof window !== 'undefined' && !!window.ng;
-
-if (isNode) {
-  mysql = require('mysql');
-  console.log('Running in Node.js');
-} else if (isReact) {
-  console.warn('Running in React (Web): mysql connection not supported!');
-} else if (isReactNative) {
-  console.log('Running in React Native: mysql connection not supported!');
-} else if (isAngular) {
-  console.log('Running in Angular: mysql connection not supported!');
-} else {
-  console.log('Unknown platform: mysql connection not supported!');
-}
+import mysql from 'mysql';
+import { SQLDBConnection } from '@ares/core/datasources';
 
 class MariaDB extends SQLDBConnection {
     async nativeConnect(callback) {
