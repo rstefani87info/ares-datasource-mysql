@@ -5,6 +5,7 @@
 
 import mysql from 'mysql';
 import { SQLDBConnection } from '@ares/core/datasources.js';
+import app from "../../../app.js";
 
 export class MariaDB extends SQLDBConnection {
     async nativeConnect(callback) {
@@ -93,11 +94,11 @@ export class MariaDB extends SQLDBConnection {
                   response.params = params;
                 }
                 callback(response);
-                if (error) {
-                  reject(response);
-                } else {
-                  resolve(response);
-                }
+                // if (error) {
+                //   callback(response);
+                // } else {
+                //   resolve(response);
+                // }
               }
             );
           });
