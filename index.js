@@ -94,11 +94,11 @@ export class MariaDB extends SQLDBConnection {
                   response.params = params;
                 }
                 callback(response);
-                // if (error) {
-                //   callback(response);
-                // } else {
-                //   resolve(response);
-                // }
+                if (error) {
+                  reject(response);
+                } else {
+                  resolve(response);
+                }
               }
             );
           });
