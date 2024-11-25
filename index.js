@@ -20,7 +20,7 @@ export class MariaDB extends SQLDBConnection {
   }
 
   async nativeConnect(callback) {
-    console.log("creatin MariaDB instance");
+    console.log("creating MariaDB instance");
     const sessionId = this.sessionId;
     MariaDB.pool = MariaDB.pool ?? mysql.createPool({ ...this, multipleStatements: true });
     this.connection = this.connection ?? null;
@@ -91,7 +91,7 @@ export class MariaDB extends SQLDBConnection {
     const connectionHandler = this;
     if (!this.datasource.aReS.isProduction()) {
       response.query = command;
-      response.params = params;
+      response.params = params.parameters;
     }
     return await new Promise(async (resolve, reject) => {
         connectionHandler.connection.query(
