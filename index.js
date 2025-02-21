@@ -16,18 +16,20 @@ export class MariaDB extends SQLDBConnection {
     connectionSettingName
   ) {
     super(connectionParameters, datasource, sessionId, connectionSettingName);
-    
+    this.pool = this.datasource.getPool(this.connectionSettingName, () => 
+      mysql.createPool({ ...this, multipleStatements: true })
+    );
   }
 
   async nativeConnect(callback) {
     console.log("creating MariaDB instance");
     const sessionId = this.sessionId;
-    MariaDB.pool = MariaDB.pool ?? mysql.createPool({ ...this, multipleStatements: true });
+    const MariaDBpool = this.pool;
     this.connection = this.connection ?? null;
     if (!this.connection) {
       const dbConn = this;
       this.connection = await new Promise((resolve, reject) => {
-        MariaDB.pool.getConnection((err, conn) => {
+        MariaDBpool.getConnection((err, conn) => {
           console.log("Connecting MariaDB " + this.sessionId);
           if (err) {
             console.error("Error getting connection:", err);
