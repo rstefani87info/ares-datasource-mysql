@@ -7,7 +7,7 @@ import {
   SQLDBConnection,
 } from "@ares/core/datasources.js";
 import { asyncConsole } from "@ares/core/console.js";
-import { dataDescriptors } from "@ares/core/dataDescriptors";
+import { dataDescriptors } from "@ares/core/dataDescriptors.js";
 
 export class MariaDB extends SQLDBConnection {
   constructor(
