@@ -127,7 +127,6 @@ export class MariaDB extends SQLDBConnection {
       response.fields = fields;
       response.results = results;
       response.error = error;
-      response.executionTime = new Date().getTime() - response.executionTime;
       callback(response);
     });
     while (wait) {
