@@ -17,7 +17,11 @@ export class MariaDB extends SQLDBConnection {
     connectionSettingName
   ) {
     super(connectionParameters, datasource, sessionId, connectionSettingName);
-    this.pool = this.datasource.getPool(this.connectionSettingName, () => 
+   
+  }
+
+  async createPool() {
+     return await this.datasource.getPool(this.connectionSettingName, () => 
       mysql.createPool({ ...this, multipleStatements: true })
     );
   }
@@ -133,6 +137,8 @@ export class MariaDB extends SQLDBConnection {
       asyncConsole.log(logName, ".....");
       setTimeout(() => {}, 100);
     }
+
+    throw new Error("executeQuerySync not implemented");
     return response;
   }
 }
