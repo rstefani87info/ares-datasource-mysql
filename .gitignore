@@ -1,9 +1,7 @@
-# Logs
+﻿# Logs
 logs
 *.log
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
 
@@ -70,7 +68,6 @@ web_modules/
 *.tgz
 
 # Yarn Integrity file
-.yarn-integrity
 
 # dotenv environment variable files
 .env
@@ -128,3 +125,4 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
