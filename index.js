@@ -96,9 +96,9 @@ export class MariaDB extends SQLDBConnection {
     const date = new Date();
     const response = { executionTime: date.getTime(), executionDateTime: date };
     const connectionHandler = this;
-    if (!this.datasource.aReS.isProduction()) {
+    if (!this.datasource.aReS.isProduction) {
       response.query = command;
-      response.params = params.parameters;
+      response.params = params;
     }
     return await new Promise(async (resolve, reject) => {
         connectionHandler.connection.query(
