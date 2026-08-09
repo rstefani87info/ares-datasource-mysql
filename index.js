@@ -8,6 +8,7 @@ import {
 } from "@ares/core/datasources.js";
 import { asyncConsole } from "@ares/core/console.js";
 import { dataDescriptors } from "@ares/core/dataDescriptors.js";
+import { avoidInjection } from "@ares/sql/script-helpers.js";
 
 export class MariaDB extends SQLDBConnection {
   constructor(
@@ -17,7 +18,7 @@ export class MariaDB extends SQLDBConnection {
     connectionSettingName
   ) {
     super(connectionParameters, datasource, sessionId, connectionSettingName);
-   
+    this.avoidInjection = avoidInjection;
   }
 
   async createPool() {
@@ -27,7 +28,6 @@ export class MariaDB extends SQLDBConnection {
   }
 
   async nativeConnect(callback) {
-    console.log("creating MariaDB instance");
     const sessionId = this.sessionId;
     const MariaDBpool = this.pool;
     this.connection = this.connection ?? null;

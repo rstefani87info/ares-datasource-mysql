@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/rstefani87info/ares-datasource-mysql.git#readme",
   "dependencies": {
-    "@ares/core": "workspace:^"
+    "@ares/core": "workspace:^",
+    "@ares/sql": "workspace:^"
   }
 }
